@@ -9,7 +9,14 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        //
+        // Fetch all projects
+        $projects = Project::all();
+
+        // Return the list of projects
+        return response()->json([
+            'message' => 'Projects retrieved successfully!',
+            'projects' => $projects,
+        ], 200);
     }
         /**
      * Store a newly created resource in storage.

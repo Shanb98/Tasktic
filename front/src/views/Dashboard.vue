@@ -39,7 +39,7 @@
   
   <script>
   import Dashboard from "../components/Dashboard.vue";
-  
+  import Projects from "../components/Projects.vue"
   export default {
     data() {
       return {
@@ -55,6 +55,7 @@
     },
     components: {
       Dashboard,
+      Projects
       // Add other components as needed
     },
     computed: {
