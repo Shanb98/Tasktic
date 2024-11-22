@@ -15,5 +15,13 @@ class Project extends Model
     {
         return $this->hasMany(Category::class);
     }
+    public function employees()
+    {
+        return $this->hasMany(Employee::class);
+    }
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }
 

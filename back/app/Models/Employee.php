@@ -4,11 +4,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class Employee extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'project_id'];
+    protected $fillable = ['full_name', 'username', 'position','project_id'];
 
     // Define inverse relationship with Project
     public function project()
