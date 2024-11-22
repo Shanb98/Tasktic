@@ -11,5 +11,9 @@ class Project extends Model
         'description',
         'duedate'
     ];
+    public function categories()
+    {
+        return $this->hasMany(Category::class);
+    }
 }
 
