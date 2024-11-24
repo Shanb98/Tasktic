@@ -24,7 +24,7 @@ class EmployeeController extends Controller
             'full_name' => 'required|string',
             'username' => 'required|string',
             'position' => 'required|string',
-            'project_id' => 'required|exists:projects,id',
+            'project_id' => 'nullable|exists:projects,id',
         ]);
 
         return Employee::create($validated);
@@ -42,16 +42,17 @@ class EmployeeController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $employee = Employee::findOrFail($id);
         $validated = $request->validate([
             'full_name' => 'string',
             'username' => 'string',
             'position' => 'string',
-            'project_id' => 'exists:projects,id',
+            'project_id' =>'nullable|exists:projects,id',
         ]);
 
         $employee->update($validated);
 
-        return $employee;
+        return response()->json($employee, 200);
     }
 
     /**
